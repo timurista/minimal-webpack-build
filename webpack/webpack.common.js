@@ -8,22 +8,6 @@ const commonPaths = require('./paths');
 
 module.exports = {
   entry: commonPaths.entryPath,
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        fancyLib: {
-          test: /[\\//=]my-fancy-lib[//\/]/,
-          chunks: 'async',
-          priority: 1,
-        },
-        otherLib: {
-          test: /[\\//=]my-other-lib[//\/]/,
-          chunks: 'async',
-          priority: 1,
-        },
-      },
-    },
-  },
   module: {
     rules: [
       {

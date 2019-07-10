@@ -28,7 +28,18 @@ module.exports = {
     // https://twitter.com/wSokra/status/969633336732905474
     // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
     splitChunks: {
+      name: true,
       cacheGroups: {
+        fancyLib: {
+          test: /[\\/]my_fancy_lib[\\/]/,
+          name: 'fancyLib',
+          chunks: 'initial',
+        },
+        otherLib: {
+          test: /[\\/]other_lib[\\/]/,
+          name: 'otherLib',
+          chunks: 'initial',
+        },
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
